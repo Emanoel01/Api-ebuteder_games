@@ -1,7 +1,6 @@
 const Jogo = require("../models/Jogo");
 const sequelize = require("../Database");
 
-
 Jogo.init(sequelize);
 
 module.exports = {
@@ -20,7 +19,7 @@ module.exports = {
         return res.json(newJogo);
     },
 
-    async insertCaminhoJogo(req,res){
+    async insertCaminhoImagemJogo(req,res){
         const id_jogo = req.params.id;
         const status = await Jogo.update({
             imagem: req.file.path
